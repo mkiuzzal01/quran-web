@@ -1,1 +1,216 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+/* ============================================================
+   THEME TOKENS
+   ============================================================ */
+
+:root {
+  /* Background — deep forest teal instead of warm black */
+  --bg: #0d1a17;
+  --surface: #122520;
+  --elevated: #1a3330;
+
+  /* Primary — soft teal replaces gold as the action color */
+  --primary: #4db891;
+  --primary-light: #7dcfb0;
+  --primary-dark: #2a6e55;
+
+  /* Accent — gold is kept but demoted to a supporting role */
+  --accent: #c9a84c;
+  --accent-dim: rgba(201, 168, 76, 0.15);
+
+  /* Text — slightly cooler, greener white */
+  --text: #e8f0ec;
+  --text-secondary: #9fbfb0;
+  --text-muted: #507060;
+
+  /* UI */
+  --border: rgba(77, 184, 145, 0.18);
+  --shadow: rgba(0, 0, 0, 0.35);
+
+  /* Fonts */
+  --font-body: 'Crimson Pro', Georgia, serif;
+  --font-arabic: 'Amiri', serif;
+  --font-trans: 'Lora', serif;
+
+  --radius: 6px;
+  --transition: 200ms ease;
+}
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   BACKGROUND UTILITIES
+   ============================================================ */
+
+.bg-base {
+  background-color: var(--bg);
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.bg-elevated {
+  background-color: var(--elevated);
+}
+
+/* ============================================================
+   TEXT UTILITIES
+   ============================================================ */
+
+.text-primary {
+  color: var(--text);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-gold {
+  color: var(--primary);
+}
+
+/* ============================================================
+   BORDER & SHADOW
+   ============================================================ */
+
+.border-theme {
+  border: 1px solid var(--border);
+}
+
+.shadow-theme {
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.btn {
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 14px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #0f0e0c;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+  background: rgba(201, 168, 76, 0.1);
+  color: var(--primary);
+}
+
+/* ============================================================
+   INPUT
+   ============================================================ */
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  outline: none;
+  transition: var(--transition);
+}
+
+.input:focus {
+  border-color: var(--primary);
+}
+
+/* ============================================================
+   CARD
+   ============================================================ */
+
+.card {
+  background: var(--elevated);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 16px;
+}
+
+/* ============================================================
+   QURAN TYPOGRAPHY
+   ============================================================ */
+
+.arabic {
+  font-family: var(--font-arabic);
+  direction: rtl;
+  text-align: right;
+  font-size: 28px;
+  line-height: 2.2;
+}
+
+.translation {
+  font-family: var(--font-trans);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* ============================================================
+   ICON BUTTON
+   ============================================================ */
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.icon-btn:hover {
+  background: rgba(201, 168, 76, 0.1);
+  color: var(--primary);
+}
+
+/* ============================================================
+   DIVIDER
+   ============================================================ */
+
+.divider {
+  height: 1px;
+  background: var(--border);
+}
+
+/* ============================================================
+   FOCUS STATE
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
