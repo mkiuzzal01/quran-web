@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="h-16 bg-surface border-b border-theme flex items-center relative">
+      <header className="h-20 bg-surface border-b border-theme flex items-center relative">
 
         {/* Bottom accent line */}
         <div className="absolute bottom-0 left-0 right-0 h-px"
@@ -41,7 +41,7 @@ export default function Navbar() {
               </div>
 
               <div className="flex flex-col gap-[3px]">
-                <span className="text-gold text-2xl tracking-[3px] font-medium leading-none">
+                <span className="text-gold text-lg lg:text-xl 2xl:text-2xl tracking-[3px] font-medium leading-none">
                   The Holy Qur'an
                 </span>
                 <span className="text-muted text-sm italic leading-none">
