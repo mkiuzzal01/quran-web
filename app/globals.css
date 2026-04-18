@@ -174,7 +174,7 @@ body {
 .translation {
   font-family: var(--font-trans);
   color: var(--text-secondary);
-  font-style: italic;
+  font-size: 28px;
 }
 
 /* ============================================================
@@ -213,4 +213,13 @@ body {
 :focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
 }

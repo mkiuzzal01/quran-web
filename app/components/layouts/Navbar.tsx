@@ -31,7 +31,7 @@ export default function Navbar() {
               : ""
               }`}
           >
-            <Menu className="w-4 h-4" />
+            <Menu className="w-5 h-5" />
           </button>
 
           {/* BRAND */}
@@ -58,11 +58,11 @@ export default function Navbar() {
 
           {/* ACTIONS */}
           <div className="flex items-center gap-[6px]">
-            <button className="icon-btn">
-              <Share2 className="w-[15px] h-[15px]" />
+            <button className="icon-btn cursor-pointer">
+              <Share2 className="w-5 h-5" />
             </button>
-            <button className="icon-btn">
-              <Globe className="w-[15px] h-[15px]" />
+            <button className="icon-btn cursor-pointer">
+              <Globe className="w-5 h-5" />
             </button>
           </div>
 

@@ -1,4 +1,3 @@
-import { getAyahBySearch } from "@/actions/quires/surah.api";
 import SearchBar from "../components/search/SearchBar";
 import AllSurah from "../components/surah-list/AllSurah";
 

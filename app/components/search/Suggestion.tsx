@@ -10,9 +10,13 @@ interface Ayah {
 }
 
 export default function Suggestion({ data }: { data: Ayah[] }) {
+
+  if (data.length === 0) {
+    return <p className="absolute left-0 p-2 top-full w-full bg-surface border border-theme rounded-lg shadow-theme overflow-hidden z-50">No results found</p>;
+  }
   return (
-    <div className="absolute left-0 top-full mt-2 w-full bg-surface border border-theme rounded-lg shadow-theme overflow-hidden z-50">
-      {data.slice(0, 10).map((item) => (
+    <div className="max-h-96 absolute left-0 top-full w-full bg-surface border border-theme rounded-lg shadow-theme overflow-hidden z-50 overflow-y-scroll">
+      {data.map((item) => (
         <Link
           key={`/surah/${item.surah}`}
           href={`/surah/${item.surah}`}

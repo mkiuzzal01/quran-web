@@ -1,7 +1,6 @@
-
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type SettingsState = {
+export type SettingsState = {
   arabicFont: "amiri" | "uthmanic";
   arabicSize: number;
   translationSize: number;
@@ -13,14 +12,19 @@ const initialState: SettingsState = {
   translationSize: 16,
 };
 
+
+
 const settingsSlice = createSlice({
   name: "settings",
   initialState,
   reducers: {
     updateSettings(state, action: PayloadAction<Partial<SettingsState>>) {
-      Object.assign(state, action.payload);
+      localStorage.setItem("settings", JSON.stringify({...state, ...action.payload}));
+      return {...state, ...action.payload};
     },
-    resetSettings: () => initialState,
+    resetSettings() {
+      return initialState;
+    },
   },
 });
 

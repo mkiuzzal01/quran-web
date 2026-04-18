@@ -30,11 +30,11 @@ export default function SearchForm({
   }, [value]);
 
   return (
-    <div className="flex justify-center py-10">
+    <div className="flex justify-center pt-10">
       <input
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        placeholder="Search..."
+        placeholder="Search Ayah"
         className="input shadow-theme w-full max-w-md"
       />
     </div>

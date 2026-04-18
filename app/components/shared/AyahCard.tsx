@@ -5,16 +5,14 @@ import { TAyah } from "@/app/redux/types/TQuran";
 
 export default function AyahCard({
   ayah,
-  surahNumber,
 }: {
   ayah: TAyah;
-  surahNumber: number;
 }) {
   const { arabicFont, arabicSize, translationSize } =
     useAppSelector((state) => state.settings);
 
   return (
-    <div className="card space-y-4">
+    <div className="card space-y-2">
 
       {/* Arabic */}
       <p
@@ -39,9 +37,8 @@ export default function AyahCard({
       {/* Footer */}
       <div className="flex justify-between items-center text-xs text-muted">
         <span>
-          Surah {surahNumber}: Ayah {ayah.number}
+          Ayah {ayah.number}
         </span>
-
       </div>
     </div>
   );
