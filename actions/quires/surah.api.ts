@@ -11,3 +11,10 @@ export const getSurahById = (id: string) =>
     tags: ['surah'],
     revalidate: 60,
   });
+
+
+export const getAyahBySearch = (query: string) =>
+  api.get<any>(`/search?q=${query}`, {
+    tags: ['surah'],
+    revalidate: 60,
+  });

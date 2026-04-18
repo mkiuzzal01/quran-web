@@ -1,30 +1,24 @@
-import React from "react";
+import { getAyahBySearch } from "@/actions/quires/surah.api";
+import SearchForm from "./SearchForm";
+import Suggestion from "./Suggestion";
 
-export default function SearchBar() {
+interface SearchBarProps {
+  searchQuery: string;
+}
+
+export default async function SearchBar({ searchQuery }: SearchBarProps) {
+  const { data } = searchQuery
+    ? await getAyahBySearch(searchQuery)
+    : { data: null };
+
+  const suggestions = data || [];
+
   return (
-    <div className="flex justify-center py-10 bg-base">
-      <form
-        className="flex w-full max-w-md items-center gap-2"
-        role="search"
-      >
-        <label htmlFor="search" className="sr-only">
-          Search
-        </label>
-
-        <input
-          id="search"
-          type="text"
-          placeholder="Search ayah..."
-          className="input shadow-theme"
-        />
-
-        <button
-          type="submit"
-          className="btn btn-primary shadow-theme"
-        >
-          Search
-        </button>
-      </form>
+    <div className="relative w-full max-w-md mx-auto">
+      <SearchForm />
+      {searchQuery && suggestions.length > 0 && (
+        <Suggestion data={suggestions} />
+      )}
     </div>
   );
 }

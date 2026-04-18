@@ -1,12 +1,17 @@
+import { getAyahBySearch } from "@/actions/quires/surah.api";
 import SearchBar from "../components/search/SearchBar";
 import AllSurah from "../components/surah-list/AllSurah";
 
+interface Props {
+  searchParams: Promise<{ q?: string }>;
+}
 
-export default function Home() {
+export default async function page({ searchParams }: Props) {
+  const { q } = await searchParams;
   return (
     <>
-    <SearchBar />
-    <AllSurah />
+      <SearchBar searchQuery={q || ""} />
+      <AllSurah />
     </>
   );
 }

@@ -1,0 +1,36 @@
+import Link from "next/link";
+
+interface Ayah {
+  ayah_number: number;
+  surah: number;
+  surah_name_ar: string;
+  surah_name_en: string;
+  text_ar: string;
+  text_en: string;
+}
+
+export default function Suggestion({ data }: { data: Ayah[] }) {
+  return (
+    <div className="absolute left-0 top-full mt-2 w-full bg-surface border border-theme rounded-lg shadow-theme overflow-hidden z-50">
+      {data.slice(0, 10).map((item) => (
+        <Link
+          key={`/surah/${item.surah}`}
+          href={`/surah/${item.surah}`}
+          className="block px-4 py-3 hover:bg-elevated transition border-b border-theme last:border-none"
+        >
+          <div className="text-sm font-medium text-primary">
+            {item.surah_name_en} ({item.surah_name_ar})
+          </div>
+
+          <div className="text-xs text-muted">
+            Ayah {item.ayah_number}
+          </div>
+
+          <div className="text-sm mt-1 line-clamp-2 text-text">
+            {item.text_en}
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
+}
