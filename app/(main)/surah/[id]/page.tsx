@@ -62,7 +62,7 @@ export default async function SurahPage({ params }: SurahPageProps) {
 
 
           <p className="text-xs tracking-widest text-muted uppercase">
-            Surah Number {surah} • Type {type}
+            Surah Number : {surah} | Type : {type}
           </p>
         </div>
 

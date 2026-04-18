@@ -58,7 +58,7 @@ export default function Sheet({
           }
         `}
       >
-        <div className="h-16 flex items-center justify-between px-4 border-b ">
+        <div className="h-16 flex items-center justify-between px-4 border-b border-[#4db891] ">
           <h2 className="text-gold font-arabic text-lg">
             {title}
           </h2>

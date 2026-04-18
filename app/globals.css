@@ -11,30 +11,25 @@
 }
 
 :root {
-  /* Background — deep forest teal instead of warm black */
   --bg: #0d1a17;
   --surface: #122520;
   --elevated: #1a3330;
 
-  /* Primary — soft teal replaces gold as the action color */
   --primary: #4db891;
   --primary-light: #7dcfb0;
   --primary-dark: #2a6e55;
 
-  /* Accent — gold is kept but demoted to a supporting role */
   --accent: #c9a84c;
   --accent-dim: rgba(201, 168, 76, 0.15);
 
-  /* Text — slightly cooler, greener white */
   --text: #e8f0ec;
   --text-secondary: #9fbfb0;
   --text-muted: #507060;
 
-  /* UI */
   --border: rgba(77, 184, 145, 0.18);
   --shadow: rgba(0, 0, 0, 0.35);
 
-  /* Fonts */
+
   --font-body: 'Crimson Pro', Georgia, serif;
   --font-arabic: 'Amiri', serif;
   --font-trans: 'Lora', serif;
@@ -42,9 +37,7 @@
   --radius: 6px;
   --transition: 200ms ease;
 }
-/* ============================================================
-   BASE STYLES
-   ============================================================ */
+
 
 body {
   font-family: var(--font-body);
@@ -210,22 +203,4 @@ body {
 .divider {
   height: 1px;
   background: var(--border);
-}
-
-/* ============================================================
-   FOCUS STATE
-   ============================================================ */
-
-:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none; /* IE/Edge */
-  scrollbar-width: none; /* Firefox */
 }

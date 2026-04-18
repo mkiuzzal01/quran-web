@@ -7,6 +7,7 @@ import { toggleSettings } from "@/app/redux/slice/ui.slice";
 import { useAppDispatch, useAppSelector } from "@/app/redux/hooks";
 import logo from "@/public/img/quran-logo.jpg"
 import Image from "next/image";
+import ShareButton from "../shared/ShareButton";
 
 export default function Navbar() {
   const { settingsOpen } = useAppSelector(state => state.ui);
@@ -58,12 +59,7 @@ export default function Navbar() {
 
           {/* ACTIONS */}
           <div className="flex items-center gap-[6px]">
-            <button className="icon-btn cursor-pointer">
-              <Share2 className="w-5 h-5" />
-            </button>
-            <button className="icon-btn cursor-pointer">
-              <Globe className="w-5 h-5" />
-            </button>
+            <ShareButton />
           </div>
 
         </Container>

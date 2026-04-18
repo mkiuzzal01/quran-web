@@ -15,13 +15,13 @@ export default async function SearchBar({ searchQuery }: SearchBarProps) {
   const suggestions = data || [];
 
   return (
-    <>
-      <SearchForm />
-      {
-        searchQuery && (
+    <Container>
+      <div className="relative w-full max-w-md mx-auto">
+        <SearchForm />
+        {searchQuery && suggestions.length > 0 && (
           <Suggestion data={suggestions} />
-        )
-      }
-    </>
+        )}
+      </div>
+    </Container>
   );
 }

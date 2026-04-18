@@ -1,7 +1,7 @@
 const defaultSettings = {
   arabicFont: "cairo",
   arabicSize: 28,
-  translationSize: 16,
+  translationSize: 18,
 };
 
 export const loadSettings = () => {

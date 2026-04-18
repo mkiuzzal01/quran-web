@@ -10,54 +10,28 @@ interface Ayah {
 }
 
 export default function Suggestion({ data }: { data: Ayah[] }) {
-  if (!data || data.length === 0) {
-    return (
-      <div className="absolute left-0 top-full w-full mt-2 bg-surface border border-theme rounded-xl shadow-theme z-50 p-4 text-center text-sm text-muted">
-        No results found
-      </div>
-    );
-  }
 
+  if (data.length === 0) {
+    return <p className="absolute left-0 p-2 top-full w-full bg-surface border border-theme rounded-lg shadow-theme overflow-hidden z-50">No results found</p>;
+  }
   return (
-    <div
-      className="
-        absolute left-0 top-full w-full mt-2
-        max-h-96 overflow-y-auto
-        bg-surface border border-theme
-        rounded-xl shadow-theme z-50
-        scrollbar-hide
-      "
-    >
+    <div className="max-h-96 absolute left-0 top-full w-full bg-surface border border-theme rounded-lg shadow-theme overflow-hidden z-50 overflow-y-scroll">
       {data.map((item) => (
         <Link
           key={`${item.surah}-${item.ayah_number}`}
           href={`/surah/${item.surah}`}
-          className="
-            group block px-4 py-3
-            border-b border-theme last:border-none
-            hover:bg-elevated transition-colors
-          "
+          className="block px-4 py-3 hover:bg-elevated transition border-b border-theme last:border-none"
         >
-          {/* Header */}
-          <div className="flex items-center justify-between gap-2">
-            <p className="text-sm font-medium text-primary group-hover:text-primary-light transition">
-              {item.surah_name_en}
-            </p>
-
-            <span className="text-[11px] px-2 py-0.5 rounded-full bg-elevated text-muted">
-              Ayah {item.ayah_number}
-            </span>
+          <div className="text-lg font-bold text-primary">
+            {item.surah_name_en} ({item.surah_name_ar})
           </div>
 
-          {/* Arabic name */}
-          <p className="text-xs text-muted mt-0.5">
-            {item.surah_name_ar}
-          </p>
-
-          {/* Preview */}
-          <p className="text-sm mt-2 text-text line-clamp-2 leading-relaxed">
+          <div className="text-xs text-muted">
+            Ayah {item.ayah_number}
+          </div>
+          <div className="text-sm mt-1 line-clamp-2 text-text">
             {item.text_en}
-          </p>
+          </div>
         </Link>
       ))}
     </div>
