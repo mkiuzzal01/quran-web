@@ -16,9 +16,7 @@ export default async function SearchBar({ searchQuery }: SearchBarProps) {
 
   return (
     <>
-      <Container>
-        <SearchForm />
-      </Container>
+      <SearchForm />
       {
         searchQuery && (
           <Suggestion data={suggestions} />

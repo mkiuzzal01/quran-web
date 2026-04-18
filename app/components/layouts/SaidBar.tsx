@@ -2,8 +2,8 @@
 
 import { useAppDispatch, useAppSelector } from "@/app/redux/hooks";
 import { closeSettings } from "@/app/redux/slice/ui.slice";
-import { updateSettings, resetSettings } from "@/app/redux/slice/settingsSlice";
 import Sheet from "../shared/Sheet";
+import { resetSettings, updateSettings } from "@/app/redux/slice/settings.slice";
 
 export default function Sidebar() {
   const dispatch = useAppDispatch();

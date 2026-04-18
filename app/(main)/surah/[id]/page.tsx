@@ -23,8 +23,6 @@ export default async function SurahPage({ params }: SurahPageProps) {
 
   const { name_ar, name_en, surah, type, ayahs } = res.data;
 
-  console.log(ayahs)
-
   return (
     <div className="min-h-screen from-base to-surface">
       <Container className="py-12 space-y-12">
@@ -42,19 +40,6 @@ export default async function SurahPage({ params }: SurahPageProps) {
             </h2>
           </div>
         </div>
-
-        {/* BISMILLAH */}
-        {surah !== 9 && ayahs[0].text_ar !== "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ"  && (
-          <div className="flex flex-col items-center justify-center  text-center py-4">
-            <p className="arabic text-2xl text-primary opacity-90">
-              بِسْمِ ٱللّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-            </p>
-            <div className="border-4 rounded-full h-2 w-2" />
-            <p className="text-secondary">
-              “In the name of Allah, the Most Compassionate, the Most Merciful.”
-            </p>
-          </div>
-        )}
 
         {/* AYAH LIST */}
         <div className="space-y-4 md:space-y-6">

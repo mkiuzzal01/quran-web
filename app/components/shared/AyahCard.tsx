@@ -1,44 +1,50 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useAppSelector } from "@/app/redux/hooks";
 import { TAyah } from "@/app/redux/types/TQuran";
 
-export default function AyahCard({
-  ayah,
-}: {
-  ayah: TAyah;
-}) {
+export default function AyahCard({ ayah }: { ayah: TAyah }) {
   const { arabicFont, arabicSize, translationSize } =
     useAppSelector((state) => state.settings);
 
-  return (
-    <div className="card space-y-2">
+  const [mounted, setMounted] = useState(false);
 
-      {/* Arabic */}
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  const fontMap = {
+    cairo: "'Cairo', sans-serif",
+    amiri: "'Amiri', serif",
+  };
+
+  return (
+    <div className="card space-y-3 transition hover:shadow-md">
       <p
-        className="arabic"
+        dir="rtl"
+        className="arabic leading-loose text-right"
         style={{
-          fontSize: arabicSize,
-          fontFamily:
-            arabicFont === "uthmanic" ? "Uthmanic" : "Amiri",
+          fontSize: `${arabicSize}px`,
+          fontFamily: fontMap[arabicFont],
         }}
       >
         {ayah.text_ar}
       </p>
 
-      {/* Translation */}
       <p
-        className="translation"
-        style={{ fontSize: translationSize }}
+        className="translation text-muted leading-relaxed"
+        style={{
+          fontSize: `${translationSize}px`,
+        }}
       >
         {ayah.text_en}
       </p>
 
-      {/* Footer */}
-      <div className="flex justify-between items-center text-xs text-muted">
-        <span>
-          Ayah {ayah.number}
-        </span>
+      <div className="flex justify-between items-center text-xs text-muted pt-2 border-t border-theme/30">
+        Ayah {ayah.number}
       </div>
     </div>
   );

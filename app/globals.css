@@ -1,8 +1,14 @@
 @import 'tailwindcss';
 
-/* ============================================================
-   THEME TOKENS
-   ============================================================ */
+@font-face {
+  font-family: 'amiri';
+  src: url('/public/fonts/Amiri-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'cairo';
+  src: url('/public/fonts/Cairo-Regular.ttf');
+}
 
 :root {
   /* Background — deep forest teal instead of warm black */
