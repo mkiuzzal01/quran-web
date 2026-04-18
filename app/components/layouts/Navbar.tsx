@@ -5,6 +5,8 @@ import { Menu, Share2, Globe } from "lucide-react";
 import Sidebar from "./SaidBar";
 import { toggleSettings } from "@/app/redux/slice/ui.slice";
 import { useAppDispatch, useAppSelector } from "@/app/redux/hooks";
+import logo from "@/public/img/quran-logo.jpg"
+import Image from "next/image";
 
 export default function Navbar() {
   const { settingsOpen } = useAppSelector(state => state.ui);
@@ -12,7 +14,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="h-20 bg-surface border-b border-theme flex items-center relative">
+      <header className="sticky top-0 z-50 h-20 bg-surface flex items-center">
 
         {/* Bottom accent line */}
         <div className="absolute bottom-0 left-0 right-0 h-px"
@@ -36,12 +38,12 @@ export default function Navbar() {
           <div className="flex-1 flex justify-center">
             <Link href="/" className="flex items-center gap-3 no-underline">
 
-              <div className="w-10 h-10 flex items-center justify-center rounded border border-[rgba(201,168,76,0.22)] bg-elevated shrink-0">
-                <span className="font-arabic text-[22px] text-gold leading-none">ق</span>
+              <div className="w-10 h-10 flex items-center justify-center  border-[rgba(201,168,76,0.22)] bg-elevated shrink-0">
+                <Image src={logo} alt="Logo" width={90} height={90} className="rounded-lg" />
               </div>
 
               <div className="flex flex-col gap-[3px]">
-                <span className="text-gold text-lg lg:text-xl 2xl:text-2xl tracking-[3px] font-medium leading-none">
+                <span className="text-gold text-md lg:text-xl 2xl:text-2xl tracking-[3px] font-medium leading-none">
                   The Holy Qur'an
                 </span>
                 <span className="text-muted text-sm italic leading-none">

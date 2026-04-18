@@ -42,7 +42,7 @@ export default function Sheet({
       <aside
         className={`
           fixed top-0 z-50 h-full ${width}
-          bg-base border-theme border
+          bg-base
           shadow-2xl flex flex-col
 
           will-change-transform
@@ -58,7 +58,7 @@ export default function Sheet({
           }
         `}
       >
-        <div className="h-16 flex items-center justify-between px-4 border-b border-theme">
+        <div className="h-16 flex items-center justify-between px-4 border-b ">
           <h2 className="text-gold font-arabic text-lg">
             {title}
           </h2>
